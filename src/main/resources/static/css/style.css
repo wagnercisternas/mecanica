@@ -1,0 +1,32 @@
+.navbar-brand {
+	padding-top: 12px;
+}
+
+.panel-default {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.navbar-inverse {
+	background: #363636;
+	border-color: #363636;
+
+}
+.panel-default {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.alert{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.lm-link-panel{
+	float: right;
+	padding: 0px;
+}
+
+.lm-cliente-panel{
+	float: left;
+	padding: 2px;
+}

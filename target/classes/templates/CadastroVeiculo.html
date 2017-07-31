@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	 xmlns:th="http://www.thymeleaf.org"
+	 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	 layout:decorator="LayoutPadrao">
+<head>
+<title>Cadastro de Cliente</title>
+</head>
+    <section layout:fragment="conteudo">
+    <form class="form-horizontal" method="POST" action="/veiculos">
+    	<div class="alert alert-success" th:if='${!#strings.isEmpty(mensagem)}'>
+    		<span th:text="${mensagem}">Cliente salvo com sucesso!!!</span>
+    	</div>
+        
+    	<div class="panel panel-default">
+    		<div class="panel-heading">
+    			<div class="clearfix">
+    				<h1 class="panel-title lm-cliente-panel">Cadastro de Veiculos</h1>
+    				<a class="btn btn-link lm-link-panel" href="/clientes">Pesquisa de clientes</a>
+    			</div>
+    		</div>
+    		
+    		<div class="panel-body">
+				<div class="form-group">
+					<label for="placaVeiculo" class="col-sm-2 control-label">Placa</label>
+					<div class="col-sm-2"> 
+						<input type="text" class="form-control" id="placaVeiculo" name="placaVeiculo"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="modeloVeiculo" class="col-sm-2 control-label">Modelo</label>
+					<div class="col-sm-2">  
+						<input type="text" class="form-control"	id="modeloVeiculo" name="modeloVeiculo" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="corVeiculo" class="col-sm-2 control-label">Cor</label>
+					<div class="col-sm-2">   
+						<input type="text" class="form-control" id="corVeiculo" name="corVeiculo"/>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="anoVeiculo" class="col-sm-2 control-label">Ano Fabricação</label>
+					<div class="col-sm-2">   
+						<input type="text" class="form-control" id="anoVeiculo" name="anoVeiculo"/>
+					</div>
+				</div>				
+				
+				
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-primary">Salvar</button>
+					</div>
+				</div>
+    		</div>
+    	</div>    
+    </form>
+
+</section>
+</html>
