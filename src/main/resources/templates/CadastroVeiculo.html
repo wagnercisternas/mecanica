@@ -4,19 +4,19 @@
 	 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	 layout:decorator="LayoutPadrao">
 <head>
-<title>Cadastro de Cliente</title>
+<title>Cadastro de Veiculos</title>
 </head>
     <section layout:fragment="conteudo">
     <form class="form-horizontal" method="POST" action="/veiculos">
     	<div class="alert alert-success" th:if='${!#strings.isEmpty(mensagem)}'>
-    		<span th:text="${mensagem}">Cliente salvo com sucesso!!!</span>
+    		<span th:text="${mensagem}">Veiculo salvo com sucesso!!!</span>
     	</div>
         
     	<div class="panel panel-default">
     		<div class="panel-heading">
     			<div class="clearfix">
     				<h1 class="panel-title lm-cliente-panel">Cadastro de Veiculos</h1>
-    				<a class="btn btn-link lm-link-panel" href="/clientes">Pesquisa de clientes</a>
+    				<a class="btn btn-link lm-link-panel" href="/cliente/novo">Pesquisa de clientes</a>
     			</div>
     		</div>
     		
