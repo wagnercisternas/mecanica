@@ -9,6 +9,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.wasc.mecanica.model.Cliente;
 import com.wasc.mecanica.repository.Clientes;
@@ -28,17 +29,15 @@ public class ClienteController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST )
-	public ModelAndView salvar(@Validated Cliente cliente, Errors errors) {
-		ModelAndView mv = new ModelAndView("CadastroCliente");
+	public String salvar(@Validated Cliente cliente, Errors errors, RedirectAttributes attributes) {
 
 		if (errors.hasErrors()) {
-			return mv;
+			return "CadastroCliente";
 		}
 		
 		clientes.save(cliente);
-		
-		mv.addObject("mensagem", "Cliente salvo com sucesso!");
-		return mv;
+		attributes.addFlashAttribute("mensagem", "Cliente salvo com sucesso!");
+		return "redirect:/cliente/novo";
 	}
 	
 	@RequestMapping
